@@ -1,0 +1,72 @@
+env:
+  browser: false
+  es2021: true
+extends:
+  - airbnb-base
+  - airbnb-typescript/base
+parser: '@typescript-eslint/parser'
+parserOptions:
+  project: ./tsconfig.json
+  ecmaVersion: 12
+  sourceType: module
+plugins:
+  - '@typescript-eslint'
+rules:
+  # Disable default typescript-eslint indent rule...
+  '@typescript-eslint/indent': off
+  # Disable typescript-eslint rule about not awaiting sync functions (breaks with our is-port-reachable implementation)
+  '@typescript-eslint/return-await': off
+  # Added rules for BFF
+  '@typescript-eslint/no-explicit-any': off
+  '@typescript-eslint/ban-ts-comment': off
+  '@typescript-eslint/no-namespace': off
+  '@typescript-eslint/no-non-null-assertion': off
+  '@typescript-eslint/no-empty-function': off
+  '@typescript-eslint/no-unused-vars': off
+  no-restricted-syntax: 0
+  # Enforce ALWAYS needing semicolon at the end of every line
+  semi: ['error', 'always']
+  # Add our custom eslint indent rule
+  indent:
+    [
+      'error',
+      2,
+      {
+        'CallExpression': {
+          'arguments': 'first'
+        },
+        'FunctionDeclaration': {
+          'parameters': 'first'
+        },
+        'FunctionExpression': {
+          'parameters': 'first'
+        },
+        'ImportDeclaration': 'first',
+        'SwitchCase': 1
+      }
+    ]
+  # Single quote style enforcing
+  quotes: ['error', 'single']
+  # Somewhat permissive max line length
+  max-len: ['error', 120]
+  # No multiple empty lines to keep the code tidy
+  no-multiple-empty-lines: ['error', { 'max': 1 }]
+  # 'Useless' means the constructor function has no body. We use constructors to
+  # declare class variables too, so it makes sense for us that they have no body.
+  no-useless-constructor: 0
+  # This rule complains about syntax like 'export class ...', so we disable it
+  import/prefer-default-export: 0
+  # Allow circular dependencies for db relationships
+  import/no-cycle: 0
+  # Make opening curly braces appear on same line
+  brace-style: 2
+  # 'Expected class method to use 'this' appears to not apply to us...'
+  class-methods-use-this: 0
+  # Enable using 'await' in loops
+  no-await-in-loop: 0
+  # Always expect spacing between curly braces in import statements / objects
+  object-curly-spacing: ['error', 'always']
+  # Enforce a whiteline before the return statement
+  newline-before-return: 2
+  # Allow unary operators for loops
+  no-plusplus: 0

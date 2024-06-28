@@ -31,7 +31,7 @@ The connection details for the database must be defined as environment variables
 In this example, a PostgreSQL db server is started running on a local Docker container by executing:
 
 ```bash
-npm run start:dev:db
+npm run start:db
 ```
 
 ## TypeORM Migrations
@@ -63,12 +63,13 @@ To access the Swagger API interface, run the app and open `http://localhost:3002
 
 ## Test
 
-A sample of unit tests is provided, using sqlite as database server. In this way, there is no need to mock the postgress database server. Sqlite is quite compatible with postgreSQL for most of the common data types. 
+A sample of unit tests is provided, using sqlite as database server. In this way, there is no need to mock the postgress database server. Sqlite is quite compatible with postgreSQL for most of the common data types.
+
+The test suites are not meant to be complete or exhaustive. More test cases can be added. 
 
 To run unit tests, execute
 
 ```bash
-# unit tests
 npm run test
 ```
 

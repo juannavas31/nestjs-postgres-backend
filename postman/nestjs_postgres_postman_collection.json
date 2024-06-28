@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "2887a15f-ed2f-4177-802c-0c58fb82e8d5",
+		"name": "Nestjs_Postgress",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17706536"
+	},
+	"item": [
+		{
+			"name": "allProfiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/profiles?role=user",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"profiles"
+					],
+					"query": [
+						{
+							"key": "role",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profileById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/profiles/edd07576-47db-4869-8a50-0f13835d5655",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"profiles",
+						"edd07576-47db-4869-8a50-0f13835d5655"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Fran\",\n    \"emailAddress\": \"fran@mail.com\",\n    \"companyName\": \"hiscompany\",\n    \"role\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/profiles",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createResource",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"profileId\": \"0d5cd983-8741-4454-ae49-d5a8c536c4a4\",\n    \"name\": \"nft-art-deco\",\n    \"address\": \"0x123345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/resources",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"resources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allResources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/resources",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"resources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resourceById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/resources/f8b94f56-f5cd-4f9a-bf85-853a70b76e05",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"resources",
+						"f8b94f56-f5cd-4f9a-bf85-853a70b76e05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProfile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"robert\",\n    \"emailAddress\": \"bob@mail.com\",\n    \"companyName\": \"mycompany\",\n    \"role\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/profiles/63d60428-fe55-4a9e-8c7b-82dc68a53ab8",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"profiles",
+						"63d60428-fe55-4a9e-8c7b-82dc68a53ab8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
