@@ -73,5 +73,11 @@ To run unit tests, execute
 npm run test
 ```
 
+## Postman
+
+You can use an included postman collection to interact with the backend using Postman. 
+
+The collection is available at the postman/ folder. Import the collection from Postman. 
+Mind to update the value for the profileId when creating a new resource (it is assigned to a previously created profile). 
 
 
