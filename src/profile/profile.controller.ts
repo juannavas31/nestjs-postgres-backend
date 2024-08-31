@@ -96,7 +96,8 @@ export class ProfileController {
   async getAllProfiles(
     @Query('role') role?: string,
   ): Promise<Profile[]> {
-    // check that isCustomerParam is a boolean
+    // the controller should perform authentication and authorization
+    // this is out of the scope of this example
 
     return this.profileService.getProfiles(role);
   }
